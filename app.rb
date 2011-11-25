@@ -60,10 +60,7 @@ class ProductResource < Webmachine::Resource
   end
 
   def from_json
-    $products << @product.from_json(request.body.to_s) do |object|
-      # TODO: if i fuck up things here, there's no exception - why [@seancribbs]?
-      object.definition.name != "id" # and object.definition.name != "links"
-    end
+    $products << @product.from_json(request.body.to_s, :except => [:id])
   end
   
   def to_json

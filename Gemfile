@@ -1,7 +1,7 @@
 source "http://rubygems.org"
 
 gem 'webmachine'
-gem "roar", :path => "../roar"
+gem "roar", "~> 0.8.1"
 gem 'httparty'
 gem 'json'
 
